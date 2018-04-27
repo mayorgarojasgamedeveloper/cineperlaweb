@@ -1,0 +1,120 @@
+h1 {
+  font-size: 60px;
+}
+/* MENU */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    background-color: #111;
+}
+
+/* Change the link color to #111 (black) on hover */
+nav li a:hover {
+    background-color: #111;
+}
+
+nav .active {
+    background-color: #4CAF50;
+}
+
+/* Estrenos */
+.estrenos {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-gap: 50px;
+  padding: 50px 200px;
+}
+
+.pelicula-estreno img {
+  width: 80%;
+}
+
+/* Cartelera */
+.pelicula-cartelera {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 50px;
+  padding: 50px 350px;
+}
+
+h2 span {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+}
+
+/* PELICULA */
+
+.pelicula {
+  display: grid;
+  grid-template-columns: 20% auto;
+  grid-gap: 50px;
+  padding: 50px 10%;
+}
+
+.pelicula img {
+  width: 100%;
+}
+
+h2 span {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+}
+
+.detalle {
+  margin: 5px;
+  padding: 5px 10px;
+  background-color: #286090;
+  color: white;
+  border-radius: 5px;
+}
+
+.funcion {
+  margin: 20px;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+}
+
+.funciones {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+  background-color: blue;
+}
+/* LOGIN */
+.bloque {
+  width: 700px;
+  margin: 50px auto;
+  padding: 40px 40px 75px 40px;
+  background-color: #dedee0;
+  border-radius: 20px;
+}
+
+/* PERFIL */
+#usuario {
+  width: 700px;
+  margin: 50px auto;
+  padding: 40px 40px 75px 40px;
+}
