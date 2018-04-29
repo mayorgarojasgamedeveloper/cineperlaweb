@@ -1,3 +1,7 @@
+if(Cookies.get('adminId') == null) {
+  window.location.replace("./index.html");
+}
+
 $(document).ready( () => {
 
   var lista_logs = $.ajax({url: "http://localhost:3000/log", method: "get", });

@@ -1,4 +1,9 @@
+if(Cookies.get('usuarioId') != null) {
+  window.location.replace("./index.html");
+}
+
 $(document).ready( () => {
+
 
   var button = $('#button');
   var form = $('#form');

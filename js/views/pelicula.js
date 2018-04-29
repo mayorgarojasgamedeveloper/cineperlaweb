@@ -47,7 +47,12 @@ $(document).ready( () => {
           html += `Boletos ($63): <input type="number" class="form-control" id="boletos" value="1"`;
           html += `<br>`;
           html += `<br>`;
-          html += `<button type="button" id="btn_comprar" class="btn btn-primary">Comprar</button>`;
+          if(Cookies.get('usuarioId') == null) {
+            html += `<button type="button" class="btn btn-primary" disabled>Comprar</button>`;
+            html += `<br><a href="./login.html">Iniciar Sesion</a>`;
+          } else {
+            html += `<button type="button" id="btn_comprar" class="btn btn-primary">Comprar</button>`;
+          }
         }else{
           html += `<p>Lo sentimos, no hay funciones disponibles</p>`;
         }

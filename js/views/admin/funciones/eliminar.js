@@ -1,3 +1,7 @@
+if(Cookies.get('adminId') == null) {
+  window.location.replace("../index.html");
+}
+
 $(document).ready( () => {
 
   var lista_peliculas = $.ajax({url: "http://localhost:3000/pelicula", method: "get" });

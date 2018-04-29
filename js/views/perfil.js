@@ -1,3 +1,7 @@
+if(Cookies.get('usuarioId') == null) {
+  window.location.replace("./index.html");
+}
+
 $('document').ready(function() {
 
   var usuarioId = Cookies.get('usuarioId');
@@ -32,7 +36,7 @@ $('document').ready(function() {
 
     swal({
       title: "Estas Seguro?",
-      text: `Metodo de pago: Tarjeta de Credito\nNumero de tarjeta: XXXX XXXX XXXX 1234`,
+      text: `Total: $50 pesos\nMetodo de pago: Tarjeta de Credito\nNumero de tarjeta: XXXX XXXX XXXX 1234`,
       icon: "warning",
       buttons: true,
       dangerMode: true,

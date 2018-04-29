@@ -1,5 +1,5 @@
-if(Cookies.get('usuarioId') != null) {
-  window.location.replace("./index.html");
+if(Cookies.get('adminId') != null) {
+  window.location.replace("./inicio.html");
 }
 
 $('document').ready(function() {
@@ -11,8 +11,9 @@ $('document').ready(function() {
     var contrasena = $('#contrasena').val();
 
 
-    var crearPelicula = $.ajax({url: `http://localhost:3000/usuario/existe?usuario=${usuario}&contrasena=${contrasena}`, method: 'get'});
-    crearPelicula.done( (data) => {
+    var adminExiste = $.ajax({url: `http://localhost:3000/admin/existe?usuario=${usuario}&contrasena=${contrasena}`, method: 'get'});
+    adminExiste.done( (data) => {
+      console.log(data);
       if(data.name === 'error'){
         swal("Error!", "Ocurrio algun error.\nPor favor inentelo de nuevo o mas tarde.", "error");
       }else{
@@ -20,9 +21,9 @@ $('document').ready(function() {
         if(jQuery.isEmptyObject(data)) {
           swal('Usuario o contrasena incorrecta!');
         } else {
-          Cookies.set('usuarioId', data[0].usuarioid);
-          console.log(Cookies.get('usuarioId'));
-          window.location.replace("./index.html");
+          Cookies.set('adminId', data[0].adminid);
+          console.log(Cookies.get('adminId'));
+          window.location.replace("./inicio.html");
         }
       }
     });

@@ -1,3 +1,7 @@
+if(Cookies.get('adminId') == null) {
+  window.location.replace("../index.html");
+}
+
 $(document).ready( () => {
 
 
