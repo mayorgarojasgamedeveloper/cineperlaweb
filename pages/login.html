@@ -35,16 +35,18 @@
 
           <form class="bloque">
             <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <label for="user">Usuario</label>
+              <input type="text" class="form-control" id="user" placeholder="Correo">
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <label for="contrasena">Contraseña</label>
+              <input type="password" class="form-control" id="contrasena" placeholder="Contraseña">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" id="btn_login" class="btn btn-primary">Iniciar Sesion</button>
             <br><br>
             <a href="./crearcuenta.html">Crear Cuenta</a>
+            <br><br>
+            <a href="./admin/login.html">Entrar como administrador</a>
           </form>
 
         </div>
@@ -52,6 +54,8 @@
 
         <!-- jQuery -->
         <script src="../js/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
         <!-- Bootstrap Core JavaScript -->
         <script src="../js/bootstrap.min.js"></script>
@@ -60,7 +64,7 @@
         <script src="../js/metisMenu.min.js"></script>
 
         <!-- View JavaScript -->
-        <script src="../js/views/index.js"></script>
+        <script src="../js/views/login.js"></script>
 
     </body>
 </html>

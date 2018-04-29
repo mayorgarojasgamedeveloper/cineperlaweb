@@ -10,10 +10,10 @@ $(document).ready( () => {
     }
   }
 
-  var lista_peliculas = $.ajax({url: "http://localhost:3000/pelicula/" + $.urlParam('peliculaId'), method: "get", });
+  var lista_peliculas = $.ajax({url: "http://localhost:3000/pelicula/" + $.urlParam('peliculaId'), method: "get" });
 
   lista_peliculas.done((data) => {
-    var lista_funciones = $.ajax({url: "http://localhost:3000/funcion/" + data[0].peliculaid, method: "get", });
+    var lista_funciones = $.ajax({url: "http://localhost:3000/funcion/" + data[0].peliculaid, method: "get" });
     lista_funciones.done((data_fun) => {
       pelicula = data[0];
       funciones = data_fun;
@@ -44,7 +44,7 @@ $(document).ready( () => {
             html += `<option value="${index}">Dia: ${value.dia} | Hora: ${value.hora} | Lugares Disponibles: ${asientosDis}</option>`;
           });
           html += `</select>`;
-          html += `Boletos: <input type="number" class="form-control" id="boletos" value="1"`;
+          html += `Boletos ($63): <input type="number" class="form-control" id="boletos" value="1"`;
           html += `<br>`;
           html += `<br>`;
           html += `<button type="button" id="btn_comprar" class="btn btn-primary">Comprar</button>`;
@@ -59,12 +59,43 @@ $(document).ready( () => {
 
       var i = $('#multiple').val();
       var asientosDis = 30 - data_fun[i].asientos;
-      var boletos = $('#boletos').val();
+      var funcionId = data_fun[i].funcionid;
+      var boletos = parseInt($('#boletos').val());
+      var total = boletos * 63;
+      var peliculaId = parseInt($.urlParam('peliculaId'));
       if(boletos <= asientosDis){
-        swal("Compra realizada!", `Se han comprado ${boletos} boletos.\nCodigo de compra: ${Math.round(Math.random()*1000000)}`, "success")
-        .then((value) => {
-          window.location.replace("./cartelera.html");
+
+        var lista_fasientos = $.ajax({url: "http://localhost:3000/funcion/asientos", data: {funcionId: funcionId, numero: boletos}, method: "put" });
+        lista_fasientos.done((data_aientos) => {
+
+          swal({
+            title: "Estas Seguro?",
+            text: `Cantidad de boletos: ${boletos}\nTotal: $${total} pesos\nMetodo de pago: Tarjeta de Credito\nNumero de tarjeta: XXXX XXXX XXXX 1234`,
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              var usuarioId = parseInt(Cookies.get('usuarioId'));
+              var generar_Recibos = $.ajax({url: "http://localhost:3000/recibo", data: {usuarioId: usuarioId, funcionId: funcionId, peliculaId: peliculaId, boletos: boletos,total: total}, method: "post" });
+              lista_fasientos.done((recibo) => {
+                swal("Compra realizada!", `Se han comprado ${ boletos} boletos.\nCodigo de compra: ${Math.round(Math.random()*1000000)}`, "success")
+                .then((value) => {
+                  location.reload();
+                });
+
+              });
+
+            } else {
+              swal("Se cancelo la transaccion!");
+            }
+          });
+
         });
+
+
+
       }else{
         swal("Error en la compra!", `No hay suficientes voletos en la sala.`, "error");
       }

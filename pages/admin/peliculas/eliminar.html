@@ -1,4 +1,4 @@
-.<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -120,7 +120,7 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Empleados</h1>
+                    <h1 class="page-header">Peliculas</h1>
                 </div>
             </div>
 
@@ -128,34 +128,33 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Agregar Empleado
+                        Eliminar
                     </div>
+                    <!-- /.panel-heading -->
 
+
+
+                    <!-- aqui van todos los logs, mayorga te dira que procede para agregar todo despues-->
                     <div class="panel-body">
-                      <form id="form">
-                          <div class="form-group">
-                              <label for="nombre">Nombre</label>
-                              <input type="text" class="form-control" name="nombre" id="nombre" required>
-                              <label for="apellido">Apellidos</label>
-                              <input type="text" class="form-control" name="apellido" id="apellido" required>
-                              <label for="correo">Correo</label>
-                              <input type="email" class="form-control" name="correo" id="correo" required>
-                              <label for="contrasena">Contraseña</label>
-                              <input type="password" type="password" class="form-control" name="contrasena" id="contrasena" required>
-                              <label for="usuario">Usuario</label>
-                              <input type="text" class="form-control" name="usuario" id="usuario" required>
-                              <p class="help-block">Panel de empleados../peliculas/ de la perla del pacifico.</p>
-                          </div>
-                          <button class="btn btn-primary" type="button">
-                              <i class="fa  fa-user-plus" id="button">    Agregar empleado</i>
-                          </button>
-                      </form> <!--Form-->
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Pelicula</th>
+                                        <th>Accion</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.table-responsive -->
                     </div>
                     <!-- /.panel-body -->
                 </div>
                 <!-- /.panel -->
             </div>
-
         </div>
     </div>
 
@@ -170,12 +169,11 @@
 
 <!-- Metis Menu Plugin JavaScript -->
 <script src="../../../js/metisMenu.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <!-- Custom Theme JavaScript -->
 <script src="../../../js/startmin.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-<script src="../../../js/views/admin/empleados/agregar.js"></script>
+<script src="../../../js/views/admin/peliculas/eliminar.js"></script>
 
 </body>
 </html>

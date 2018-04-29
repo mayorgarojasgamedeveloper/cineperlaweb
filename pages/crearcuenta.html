@@ -33,28 +33,28 @@
 
           <h1 class="display-1 text-center">Crear Sesion</h1>
 
-          <form class="bloque">
+          <form id="form" class="bloque">
             <div class="form-group">
               <label for="exampleInputEmail1">Usuario</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nombre de usuario">
+              <input type="text" class="form-control" name="usuario" id="exampleInputEmail1" placeholder="Nombre de usuario"required>
             </div>
             <div class="form-group">
-              <label for="exampleInputEmail1">Nombre</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nombre">
+              <label for="nombre">Nombre</label>
+              <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre"required>
             </div>
             <div class="form-group">
-              <label for="exampleInputEmail1">Apellido</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Apellido">
+              <label for="apellido">Apellido</label>
+              <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Apellido"required>
             </div>
             <div class="form-group">
-              <label for="exampleInputEmail1">Correo</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="ejemplo@gmail.com">
+              <label for="correo">Correo</label>
+              <input type="email" class="form-control" name="correo" id="correo" placeholder="ejemplo@gmail.com"required>
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Contrasena</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <label for="contrasena">Contrasena</label>
+              <input type="password" class="form-control" name="contrasena" id="contrasena" placeholder="Password"required>
             </div>
-            <button type="submit" class="btn btn-primary">Crear Cuenta</button>
+            <button type="button" id="button" class="btn btn-primary">Crear Cuenta</button>
           </form>
 
         </div>
@@ -62,15 +62,17 @@
 
         <!-- jQuery -->
         <script src="../js/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 
         <!-- Bootstrap Core JavaScript -->
         <script src="../js/bootstrap.min.js"></script>
 
         <!-- Metis Menu Plugin JavaScript -->
         <script src="../js/metisMenu.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
         <!-- View JavaScript -->
-        <script src="../js/views/index.js"></script>
+        <script src="../js/views/crearcuenta.js"></script>
 
     </body>
 </html>

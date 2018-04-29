@@ -1,4 +1,4 @@
-.<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -120,7 +120,7 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Empleados</h1>
+                    <h1 class="page-header">Peliculas</h1>
                 </div>
             </div>
 
@@ -128,26 +128,32 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Agregar Empleado
+                        Agregar Pelicula
                     </div>
 
                     <div class="panel-body">
-                      <form id="form">
+                      <form role="form" id="form">
                           <div class="form-group">
                               <label for="nombre">Nombre</label>
                               <input type="text" class="form-control" name="nombre" id="nombre" required>
-                              <label for="apellido">Apellidos</label>
-                              <input type="text" class="form-control" name="apellido" id="apellido" required>
-                              <label for="correo">Correo</label>
-                              <input type="email" class="form-control" name="correo" id="correo" required>
-                              <label for="contrasena">Contraseña</label>
-                              <input type="password" type="password" class="form-control" name="contrasena" id="contrasena" required>
-                              <label for="usuario">Usuario</label>
-                              <input type="text" class="form-control" name="usuario" id="usuario" required>
-                              <p class="help-block">Panel de empleados../peliculas/ de la perla del pacifico.</p>
+                              <label for="categoria">Categorias</label>
+                              <input type="text" class="form-control" name="categoria" id="categoria" required>
+                              <label for="duracion">Duracion</label>
+                              <input type="number" class="form-control" name="duracion" id="duracion" required>
+                              <label for="restriccion">Restriccion</label>
+                              <input type="text" class="form-control" name="restriccion" id="restriccion" required>
+                              <label for="director">Director</label>
+                              <input type="text" class="form-control" name="director" id="director" required>
+                              <label for="actores">Actores</label>
+                              <input type="text" class="form-control" name="actores" id="actores" required>
+                              <label for="portada">Portada (url)</label>
+                              <input type="text" class="form-control" name="portada" id="portada" required>
+                              <label for="sipnosis">Sipnosis</label>
+                              <textarea type="text" class="form-control" rows="5" name="sinopsis" id="sinopsis" required></textarea>
+                              <p class="help-block">Panel de peliculas de la perla del pacifico.</p>
                           </div>
-                          <button class="btn btn-primary" type="button">
-                              <i class="fa  fa-user-plus" id="button">    Agregar empleado</i>
+                          <button class="btn btn-primary" type="button" id="button">
+                              <i class="fa fa-send">    Agregar pelicula</i>
                           </button>
                       </form> <!--Form-->
                     </div>
@@ -175,7 +181,7 @@
 <script src="../../../js/startmin.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-<script src="../../../js/views/admin/empleados/agregar.js"></script>
+<script src="../../../js/views/admin/peliculas/agregar.js"></script>
 
 </body>
 </html>

@@ -1,4 +1,4 @@
-.<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -120,7 +120,7 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Empleados</h1>
+                    <h1 class="page-header">Funciones</h1>
                 </div>
             </div>
 
@@ -128,34 +128,90 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Agregar Empleado
+                        Añadir
                     </div>
+                    <!-- /.panel-heading -->
 
+                    <!-- aqui van todos los logs, mayorga te dira que procede para agregar todo despues-->
                     <div class="panel-body">
-                      <form id="form">
-                          <div class="form-group">
-                              <label for="nombre">Nombre</label>
-                              <input type="text" class="form-control" name="nombre" id="nombre" required>
-                              <label for="apellido">Apellidos</label>
-                              <input type="text" class="form-control" name="apellido" id="apellido" required>
-                              <label for="correo">Correo</label>
-                              <input type="email" class="form-control" name="correo" id="correo" required>
-                              <label for="contrasena">Contraseña</label>
-                              <input type="password" type="password" class="form-control" name="contrasena" id="contrasena" required>
-                              <label for="usuario">Usuario</label>
-                              <input type="text" class="form-control" name="usuario" id="usuario" required>
-                              <p class="help-block">Panel de empleados../peliculas/ de la perla del pacifico.</p>
-                          </div>
-                          <button class="btn btn-primary" type="button">
-                              <i class="fa  fa-user-plus" id="button">    Agregar empleado</i>
-                          </button>
-                      </form> <!--Form-->
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Pelicula</th>
+                                        <th>Dia</th>
+                                        <th>Hora</th>
+                                        <th>Asientos</th>
+                                        <th>Accion</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                      <td>
+                                          <div class="form-group">
+                                            <select id="id-pelicula" class="form-control">
+                                            </select>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="form-group">
+                                            <input id="dia" name="dia" type="text" class="form-control" placeholder="Dia: 15/08/2018">
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="form-group">
+                                            <input id="hora" name="hora" type="text" class="form-control" placeholder="hora: 00:00">
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="form-group">
+                                            <select class="form-control" disabled>
+                                              <option>30</option>
+                                            </select>
+                                          </div>
+                                        </td>
+                                        <td><button type="button" id="button" class="btn btn-primary" disabled>Añadir</button></td>
+
+                                  </tr><!-- fila -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.table-responsive -->
                     </div>
                     <!-- /.panel-body -->
-                </div>
-                <!-- /.panel -->
-            </div>
+                  </div>
+                  <!-- /.panel -->
 
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Funciones
+                            </div>
+                            <!-- /.panel-heading -->
+                            <div class="panel-body">
+                                <div class="dataTable_wrapper">
+                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                        <thead>
+                                            <tr>
+                                              <th>Funcion Id</th>
+                                              <th>Pelicula Id</th>
+                                              <th>Dia</th>
+                                              <th>Hora</th>
+                                              <th>Asientos</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="funciones">
+                                         </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.table-responsive -->
+                            </div>
+                            <!-- /.panel-body -->
+                        </div>
+                        <!-- /.panel -->
+                    </div>
+                    <!-- /.col-lg-12 -->
+            </div>
         </div>
     </div>
 
@@ -175,7 +231,7 @@
 <script src="../../../js/startmin.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-<script src="../../../js/views/admin/empleados/agregar.js"></script>
+<script src="../../../js/views/admin/funciones/agregar.js"></script>
 
 </body>
 </html>
