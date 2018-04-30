@@ -9,6 +9,7 @@ $(document).ready( () => {
   var inputs = form.find('input, textarea');
 
   button.click(function() {
+
     form.find('p').remove();
     var status = 0;
     $.each(inputs, (index,value) => {

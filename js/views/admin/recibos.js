@@ -12,6 +12,7 @@ $(document).ready( () => {
 
   function render(data) {
     var html = ``;
+    var total = 0;
     $.each(data, (index, value) => {
       html += `<tr>`;
           html += `<td>${value.reciboid}</td>`;
@@ -19,9 +20,21 @@ $(document).ready( () => {
           html += `<td>${value.peliculaid}</td>`;
           html += `<td>${value.funcionid}</td>`;
           html += `<td>${value.boletos} Boleto(s)</td>`;
-          html += `<td>$${value.total}</td>`;
+          html += `<td>$${value.total} pesos</td>`;
       html += `</tr>`;
+      total += parseInt(value.total);
     });
+
+    html += `<tr>`;
+        html += `<td></td>`;
+        html += `<td></td>`;
+        html += `<td></td>`;
+        html += `<td></td>`;
+        html += `<td></td>`;
+        html += `<td>$${total} pesos</td>`;
+    html += `</tr>`;
+
+
     $('#target').append(html);
   }
 
